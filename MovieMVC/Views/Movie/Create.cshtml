@@ -1,0 +1,46 @@
+﻿@model MovieMVC.Models.Movie
+
+@{
+    ViewBag.Title = "Create New Movie";
+}
+
+<h2>Create New Movie</h2>
+
+<form action="/movie/CreateMovie" method="post">
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Runtime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Runtime, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
